@@ -1,0 +1,30 @@
+{% extends "common.html" %}
+
+{% block content %}
+<div style="margin-top: 20px;margin-left:30px; ">
+{%for scooter in scooters%}
+        <div class="col-sm-6">
+        <div class="card card-default">
+        <div class="card-header"><a href="{{url_for('scooter_details',scooter_id=scooter.id)}}"><b>{{scooter.model}}</b></a></div>
+        <div class="card-body card-5-7">
+        <div class="card-left">
+        <img src={{scooter.image}} style="width: 180px;height: 200px;">
+        </div>
+        <div class="card-right" style="padding-left:10px;">
+        
+        <p><b>Price:</b>{{scooter.price}}<br><b>Mileage:</b>{{scooter.mileage}}<br><b>FuelCapacity:</b>{{scooter.fuel_capacity}}
+        <b>Description:</b>{{scooter.description[:120]}}..</p>
+        </div>
+        </div>
+        <div class="card-footer" style="height: 50px;"><b>Category:</b> {{scooter.scooter_category.name}}
+        	{%if 'email' in login_session %}
+        	<a href="{{url_for('scooter_delete',scooter_id=scooter.id)}}" class="btn btn-danger" style="float: right;">Delete</a><a href="{{url_for('scooter_edit',id=scooter.id)}}" class="btn btn-success"style="float: right; margin-right:10px; ">Edit</a>
+        	{%endif%}
+        </div>
+        </div>
+        </div>
+        {%endfor%}
+
+
+{% endblock %}
+</div>

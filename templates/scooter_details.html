@@ -1,0 +1,35 @@
+
+
+{% extends "common.html" %}
+
+{% block title %}Catalog{% endblock title %}
+
+{% block content %}
+<!-- <div class="container">
+  <div class="row">
+ -->    <div class="md-12">
+      <p style="width: 800px;">
+      <img class="img-responsive" src="{{ scooter.image }}" alt="{{ scooter.name }}" style="width: 350px; height: 350px; float: left;">
+      <b><h4>{{scooter.model}}</h4></b>
+      <!-- <span">{{scooter.name}}</span><br> -->
+      <hr>
+      <span><b> Description :</b>
+      {{scooter.description}}</span><br>
+      <span style="border-top:2px black;"><b> Mileage :</b>
+      {{scooter.mileage}}</span><br>
+      <span ><b> Price :</b></span>
+      {{scooter.price}}<br>
+      <span ><b> FuelCapacity :</b></span>
+      {{scooter.fuel_capacity}}<br>
+      <span > <b>Category :</b></span>
+      {{scooter.scooter_category.name}}<br>
+      <hr>
+      {% if 'email' in session %}
+      <a href="{{url_for('scooter_edit',id=scooter.id)}}" class="btn btn-primary">Edit</a>
+      <a href="{{url_for('scooter_delete',scooter_id=scooter.id)}}" class="btn btn-danger">Delete</a>
+      {%endif%}
+      </p>
+    </div>
+    
+<!-- Page Content -->
+{% endblock %}

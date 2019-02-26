@@ -1,0 +1,16 @@
+
+{% extends "common.html" %}
+
+{% block title %}Catalog{% endblock title %}
+
+{% block content %}	
+<div style="border:1px solid; width: 400px; padding: 50px; background-color: #e5e8ef;margin-left: 100px;margin-top: 50px;">
+<form action="" method="POST">
+  <div class="form-group" style="width: 300px;">
+    <label for="email">Scooter Type:</label>
+    <input type="text" class="form-control" name="name" required>
+  </div>
+  <button class="btn sr-btn" type="submit" style="margin-left: 100px; background-color: #00a6b2;border-radius: 0px;">Save</button>
+</form>
+</div> 
+{% endblock %}
